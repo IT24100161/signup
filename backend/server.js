@@ -64,4 +64,6 @@ app.post("/api/profile", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// ✅ THIS IS THE ONLY CHANGE — use process.env.PORT for Render
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
